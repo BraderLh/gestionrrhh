@@ -14,7 +14,7 @@ import lombok.Setter;
 @Table(name = "usuarios")
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@NamedQuery(name = "UsuariosEntity.buscarPorEmail", query = "select u from UsuariosEntity u where u.email=:email")
 public class UsuariosEntity extends Audit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,9 +27,6 @@ public class UsuariosEntity extends Audit {
     @Column(name = "password", length = 150, nullable = false)
     private String password;
 
-    @Column(name = "nombres", length = 150, nullable = false)
-    private String nombres;
-
-    @Column(name = "apellidos", length = 150, nullable = false)
-    private String apellidos;
+    @Column(name = "role", length = 100, nullable = false)
+    private String rol;
 }

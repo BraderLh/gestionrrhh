@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Map;
 
 @Repository
-public interface UserService {
+public interface UsuariosService {
     ResponseBase registrar(Map<String,String> requestMap);
     ResponseBase iniciar(Map<String,String> requestMap);
     ResponseBase obtenerUsuarios();
